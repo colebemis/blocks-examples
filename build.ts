@@ -15,7 +15,7 @@ async function main() {
       outdir: `dist/${block.id}`,
       format: "iife",
       globalName: "BlockBundle",
-      minify: true,
+      minify: false,
       external: ["fs", "path", "assert", "react", "react-dom"],
     });
   });

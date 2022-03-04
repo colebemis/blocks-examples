@@ -31,6 +31,17 @@
     },
     {
       "type": "file",
+      "id": "code-sandbox-block",
+      "title": "Code Sandbox block",
+      "description": "A block that renders contents in a CodeSandbox",
+      "entry": "/src/blocks/file-blocks/code-sandbox/index.tsx",
+      "extensions": [
+        "*"
+      ],
+      "example_path": "https://github.com/githubnext/blocks-tutorial/blob/main/Aside.jsx"
+    },
+    {
+      "type": "file",
       "id": "excalidraw-block",
       "title": "Drawing block",
       "description": "A whiteboard tool",

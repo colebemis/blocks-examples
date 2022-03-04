@@ -5,8 +5,8 @@ import {
   FileContext,
   FolderContext,
   RepoFiles,
-  bundleCodesandboxFiles,
 } from "@githubnext/utils";
+import { bundleCodesandboxFiles } from '../utils/bundle-codesandbox-files';
 import uniqueId from "lodash.uniqueid";
 
 type Block = {
@@ -71,6 +71,10 @@ export const ProductionBlock = (props: ProductionBlockProps) => {
     metadata,
   });
 
+  const filesWithConfig = { ...files,
+    '/sandbox.config.json': JSON.stringify({ infiniteLoopProtection: false })
+  };
+
   if (!bundleCode) return null;
 
   return (
@@ -86,7 +90,7 @@ export const ProductionBlock = (props: ProductionBlockProps) => {
         template="react"
         customSetup={{
           dependencies: {},
-          files: files,
+          files: filesWithConfig
         }}
         autorun
       >
